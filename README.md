@@ -1,8 +1,7 @@
 # openvpn_certgen
-apt-get install easy-rsa
+```apt-get install easy-rsa
 sudo cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/
 sudo gunzip /etc/openvpn/server.conf.gz
-cd +
 cd ~
 mkdir openvpn
 cd openvpn/
@@ -15,3 +14,4 @@ nano pki/vars
 /usr/share/easy-rsa/easyrsa gen-req openvpn-client1 nopass
 cd pki
 zip -j client1.zip ./issued/openvpn-client1.crt ./private/openvpn-client1.key ca.crt
+```
