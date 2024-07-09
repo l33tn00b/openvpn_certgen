@@ -34,6 +34,9 @@ and zip it for download
 cd pki
 zip -j client1.zip ./issued/openvpn-client1.crt ./private/openvpn-client1.key ca.crt
 ```
+NOTE:
+When not renewing a certificate but issuing a new key/crt, the client configuration directory must be updated!
+
 
 # Renew Certificate (easy-rsa > 3.2) (not for us)
 - Command expire <NAME>   
