@@ -1,6 +1,7 @@
 # openvpn_certgen
 Setting up the CA and one client.
-We're running an older version of easy-rsa, so revoking certificates needs to be done using the old syntax, see: https://github.com/OpenVPN/easy-rsa/blob/master/doc/EasyRSA-Renew-and-Revoke.md  
+We used to run an older version of easy-rsa, so revoking certificates needed to be done using the old syntax, see: https://github.com/OpenVPN/easy-rsa/blob/master/doc/EasyRSA-Renew-and-Revoke.md  
+Now, we're on a later version (>3.2).
 
 # Basic setup
 Editing pki/vars: e.g. for setting certificate expiry dates. 
@@ -33,6 +34,11 @@ and zip it for download
 cd pki
 zip -j client1.zip ./issued/openvpn-client1.crt ./private/openvpn-client1.key ca.crt
 ```
+
+# Renew Certificate (easy-rsa > 3.2)
+- Command expire <NAME>   
+- Command sign-req <TYPE> <NAME>
+- If required, Command revoke-expired can be used to revoke an expired certificate
 
 # Revoke Certificate
 ```
