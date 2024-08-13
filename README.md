@@ -42,6 +42,8 @@ zip -j client1.zip ./issued/openvpn-client1.crt ./private/openvpn-client1.key ca
 NOTE:
 When not renewing a certificate but issuing a new key/crt, the server's client configuration directory must be updated!
 
+# Using the Keys/Certificates  
+Make sure to set ownership of files to openvpn user!
 
 # Renew Certificate (easy-rsa > 3.2) (not for us)
 - Command expire <NAME>   
