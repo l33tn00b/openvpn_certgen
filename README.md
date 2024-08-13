@@ -25,6 +25,11 @@ still be in openvpn directory!
 /usr/share/easy-rsa/easyrsa sign-req server openvpn-server
 ```
 
+# Generate Diffie-Hellman Parameter File
+```
+/usr/share/easy-rsa/easyrsa gen-dh
+```
+
 # Generate Client Certificate
 and zip it for download
 ```
