@@ -59,3 +59,9 @@ NOTE:
 - server config file must be edited to use crl file (include `crl-verify crl.pem` in config file)
 - access rights must be taken into account (i.e. when running openvpn as non-root user, file ownership must (usually) be set to `openvpn:openvpn`)
   - `chown openvpn:openvpn crl.pem`
+- The CRL WILL EXPIRE! When it expires, clients will no longer be able to connect! So you'll probably
+  - want to make sure to periodically update the crl (e.g. via cron shell script)
+  - and/or choose a longer expiry period:
+    - `nano ~/openvpn/pki/vars`
+    - `set_var EASYRSA_CRL_DAYS        3650`
+    - `easyrsa gen-crl`
